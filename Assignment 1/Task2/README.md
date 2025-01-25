@@ -1,7 +1,8 @@
 > [!NOTE]
 > 1. Please replace `[*]` with your own parameters
-> 2. Execute with Java 8 or above
+> 2. Execute with Java 8 or above and in Window version
 > 3. Special characters will not be encrypted
+> 4. ![GitHub Link](https://github.com/wmlim014/Cryptographic-Application/tree/main/Assignment%201/Task2)
 
 # Executions
 ```
