@@ -1,11 +1,15 @@
 # Student Information
 > NAME: Lim Wen Mi
+
 > STUDENT ID: 7894363
+
 > Submission for: CSCI361 - Assignment 2
+
+> GitHub: [Assignment 2](https://github.com/wmlim014/Cryptographic-Application/tree/main/Assignment%202)
 
 > [!NOTE]
 > Before the implementation, do remember redirect the file path to this folder. :innocent:
-> This submissions had been generated in python 3 environment.
+> This submissions had been generated in python 3.12.5 environment.
 
 # Implementation
 ## Task 1
@@ -39,30 +43,31 @@ python ssha1.py
 
 ## Task 5
 > [!IMPORTANT]
-> Install Crypto library
+> Install Sympy and Crypto library
 > ```
+> pip install sympy
 > pip install pycryptodome
 > pip install --force-reinstall pycryptodome
 > ```
 
-### Compile sign.py
-*The `publickey.txt` and `message.txt` must located in: `Task5`*
-*The `signature.txt` will generated in: `Task5`*
-```
-python aesAlgo.py sign
-```
-
-### Compile verify.py
-```
-python aesAlgo.py verify
-```
-
 Addition notes: 
-- To generate the public key and compute the valid private key
+- To import the `publickey.txt` and `message.txt` files, please allocate in folder called `Task5`
+- To generate the `publickey.txt` and compute the valid private key
 ```
 python aesAlgo.py gen
 ```
 *p and q generated with `sympy.randprime` to make sure they are prime in range 0 to 200*
+
+### Compile sign.py - Generate `signature.py`
+*The `signature.txt` will generated in: `Task5/sign.py`
+```
+python aesAlgo.py sign
+```
+
+### Compile verify.py - Verify `signature.py`
+```
+python aesAlgo.py verify
+```
 
 ## Task 6
 ```
