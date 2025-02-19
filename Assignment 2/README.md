@@ -3,7 +3,7 @@
 > STUDENT ID: 7894363
 > Submission for: CSCI361 - Assignment 2
 
-[!NOTE]
+> [!NOTE]
 > Before the implementation, do remember redirect the file path to this folder. :innocent:
 > This submissions had been generated in python 3 environment.
 
@@ -14,7 +14,7 @@ python Task1.py
 ```
 
 ## Task 2
-[!IMPORTANT]
+> [!IMPORTANT]
 > Install texttable library
 > ```
 > pip install texttable
@@ -29,7 +29,7 @@ python Task2.py
 ```
 python knapsack.py
 ```
-[!NOTE]
+> [!NOTE]
 > All validate functions for task 3 are allocated in `Task3/task3ValidateFuncs.py`
 
 ## Task 4
@@ -38,7 +38,7 @@ python ssha1.py
 ```
 
 ## Task 5
-[!IMPORTANT]
+> [!IMPORTANT]
 > Install Crypto library
 > ```
 > pip install pycryptodome
