@@ -35,13 +35,11 @@ def aesDecryptBytes(encrypted_data: bytes, key: bytes) -> bytes:
 def generateV(key):
     v = os.urandom(16)  # Generate random v (16 bytes)
     v = aesEncryptBytes(v, key) # Encrypt v
-    v = int.from_bytes(v, 'big')
-    return v % (1 << 128)  # Ensure v is 128 bits (16 bytes)
+    return v
 
-def computeY(k: bytes, v: int, yx: int, n: int) -> int:
+def computeY(k: bytes, v_bytes: int, yx: int, n: int) -> int:
     # Convert yx and v to 16-byte blocks
     yx_bytes = yx.to_bytes(16, 'big')
-    v_bytes = v.to_bytes(16, 'big')
     
     # Compute XOR(yx, v)
     xor_yx_v = bytes([a ^ b for a, b in zip(yx_bytes, v_bytes)])
@@ -54,6 +52,13 @@ def computeY(k: bytes, v: int, yx: int, n: int) -> int:
     y2_bytes = bytes([a ^ b for a, b in zip(s, C)])
     y2 = int.from_bytes(y2_bytes, 'big') % n  # Ensure y2 < n
     
+    print(f"yx_bytes: {yx_bytes}")
+    print(f"xor_yx_v: {xor_yx_v}")
+    print(f"C: {C}")
+    print(f"s: {s}")
+    print(f"y2_bytes: {y2_bytes}")
+    print(f"y2: {y2}")
+
     return y2
 
 def computeYx(e, n):
@@ -96,7 +101,7 @@ def outputSignature(P1, P2, v, x1, x2):
     signature = {
         "P1": P1, 
         "P2": P2, 
-        "v": v,
+        "v": int.from_bytes(v, 'big') % (1 << 128), # Ensure v is 128 bits (16 bytes)
         "x1": x1,
         "x2": x2
     }

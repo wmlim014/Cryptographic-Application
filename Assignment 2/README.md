@@ -70,6 +70,11 @@ python aesAlgo.py verify
 ```
 
 ## Task 6
+> [!NOTE]
+> In Man in the Middle attack (MitM) protection, enter:
+> - 1 for include MitM
+> - 0 for not include MitM
+> to check is the Signature checking work
 ```
-python Task6.py
+python Task6Main.py
 ```

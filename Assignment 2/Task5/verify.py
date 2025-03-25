@@ -21,6 +21,9 @@ def verify():
     # Fast method to compute (a ^ b) mod p
     y1 = pow(x1, P1[0], P1[1])
     y2 = pow(x2, P2[0], P2[1])
+    # y1 = x1 % P1[1]
+    # y2 = x2 % P2[1]
+
 
     # Compute Key, k = H(m)
     # AES Key Size = 128 (for 10 Rounds)
@@ -38,8 +41,7 @@ def verify():
     y2_bytes = y2.to_bytes(16, 'big')
     xor_y2_C = bytes([a ^ b for a, b in zip(y2_bytes, C)])
     computed_v_bytes = aesEncryptBytes(xor_y2_C, key)
-    computed_v = int.from_bytes(computed_v_bytes, 'big')
-    computed_v = computed_v  % (1 << 128)  # Ensure 128 bits
+    computed_v = int.from_bytes(computed_v_bytes, 'big') % (1 << 128)
 
     print(f"V: {v}\nComputed V: {computed_v}") # Debug Line
 
